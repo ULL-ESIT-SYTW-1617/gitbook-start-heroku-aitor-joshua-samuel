@@ -1,0 +1,24 @@
+{
+  "name": "gitbook-start-heroku-aitor-joshua-samuel",
+  "version": "0.0.0",
+  "description": "A plugin for heroku deploys",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ULL-ESIT-SYTW-1617/gitbook-start-heroku-aitor-joshua-samuel.git"
+  },
+  "keywords": [
+    "cli",
+    "heroku",
+    "deploy"
+  ],
+  "author": "Aitor Bernal Falcón, Samuel Ramos Barroso, Joshua Pérez García",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ULL-ESIT-SYTW-1617/gitbook-start-heroku-aitor-joshua-samuel/issues"
+  },
+  "homepage": "https://github.com/ULL-ESIT-SYTW-1617/gitbook-start-heroku-aitor-joshua-samuel#readme"
+}
