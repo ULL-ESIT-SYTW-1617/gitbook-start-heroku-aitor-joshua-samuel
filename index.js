@@ -11,11 +11,18 @@ var initialize = () => {
     });
 }
 
-var deploy = (ipiaas, pathiaas) => {
+var deploy = () => {
     function puts(error, stdout, stderr) {
+      if(stdout){
         console.log(stdout)
+      }
+      if(stderr){
+        console.log(stderr)
+      }
     }
-    exec("", puts);
+    exec("git add .", puts);
+    exec('git commit -m "Modificando" ', puts);
+    exec("git push heroku master", puts);
 };
 
 module.exports.initialize = initialize;
