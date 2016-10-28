@@ -27,7 +27,7 @@ var initialize = () => {
     exec('git commit -m "Modificando" ', puts);
     exec('heroku create',puts);
     exec('git push heroku master', puts);
-    exec('heroku ps:scale=1',puts);
+    exec('heroku ps:scale web=1',puts);
     exec('heroku open',puts);
 }
 
