@@ -9,13 +9,13 @@ Lista de comandos:
 Instalación:
 
 ```shell
-npm install --save gitbook-start-iaas-ull-es-aitor-joshua-samuel
+npm install --save gitbook-start-heroku-aitor-joshua-samuel
 ```
 
 Comandos:
 
 ```shell
-gulp deploy-iaas --> Depsliega tu libro en iaas.ull.es
+gulp deploy-heroku--> Depsliega tu libro en heroku
 ```
 
 ##Autores
