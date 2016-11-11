@@ -1,4 +1,4 @@
-hvar fs = require('fs');
+var fs = require('fs');
 var fsExtended = require('fs-extended');
 var path = require('path');
 var inquirer = require('inquirer');
