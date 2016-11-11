@@ -1,6 +1,6 @@
 {
   "name": "gitbook-start-heroku-aitor-joshua-samuel",
-  "version": "0.0.2",
+  "version": "1.0.0",
   "description": "A plugin for heroku deploys",
   "main": "index.js",
   "scripts": {
@@ -20,5 +20,9 @@
   "bugs": {
     "url": "https://github.com/ULL-ESIT-SYTW-1617/gitbook-start-heroku-aitor-joshua-samuel/issues"
   },
-  "homepage": "https://github.com/ULL-ESIT-SYTW-1617/gitbook-start-heroku-aitor-joshua-samuel#readme"
+  "homepage": "https://github.com/ULL-ESIT-SYTW-1617/gitbook-start-heroku-aitor-joshua-samuel#readme",
+  "dependencies": {
+    "heroku-client": "^3.0.0-beta3",
+    "inquirer": "^1.2.2"
+  }
 }

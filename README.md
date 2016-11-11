@@ -12,10 +12,17 @@ Instalación:
 npm install --save gitbook-start-heroku-aitor-joshua-samuel
 ```
 
-Comandos:
 
 ```shell
-gulp deploy-heroku--> Depsliega tu libro en heroku
+gitbook-start -d heroku --> Añades el plugin en el CLI gitbook-start
+```
+
+* Al ejecutar el comando anterior, te pide el token de heroku y el nombre que quieres ponerle a la app
+* El token de Heroku se puede obtener mediante el CLI de heroku con: ```heroku auth:token```
+* Una vez desplegado se puede desplegar en Heroku con la siguente tare de Gulp:
+
+```shell
+gulp deploy-heroku --> Depsliega tu libro en heroku
 ```
 
 ##Autores
