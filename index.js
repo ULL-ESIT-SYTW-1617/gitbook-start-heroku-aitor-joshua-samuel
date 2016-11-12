@@ -24,12 +24,12 @@ var initialize = () => {
 
         var questions = [{
             type: 'input',
-            message: 'Introduce tu token de Heroku',
+            message: 'Introduce tu token de Heroku: ',
             name: 'herokuToken'
         }, {
             type: 'input',
             name: 'herokuName',
-            message: 'Introduzca el nombre de su app en Heroku',
+            message: 'Introduzca el nombre de su app en Heroku: ',
         }];
 
         inquirer.prompt(questions).then(function(answers) {
@@ -43,7 +43,6 @@ var initialize = () => {
     });
     promise.then(function(data) {
 
-        console.log(data.herokuToken);
         token = data.herokuToken;
         name = data.herokuName
         var h = new Heroku({
@@ -54,7 +53,7 @@ var initialize = () => {
                 name
             }
         });
-        console.log("Created app: " + name);
+        console.log("Aplicación creada: " + name);
         require('simple-git')()
             .init()
             .addRemote('heroku', 'https://git.heroku.com/' + name + '.git')
