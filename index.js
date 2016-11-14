@@ -68,7 +68,7 @@ var deploy = () => {
     require('simple-git')()
         .add('.')
         .commit("commit")
-        .push(['origin', 'master'], function() {});
+        .push(['heroku', 'master'], function() {});
 };
 
 module.exports.initialize = initialize;
