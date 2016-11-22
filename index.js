@@ -5,9 +5,9 @@ var inquirer = require('inquirer');
 var Heroku = require('heroku-client');
 
 
-var initialize = () => {
+var initialize = (strategy) => {
 
-    var secondPath = path.resolve(__dirname, "./template")
+    var secondPath = path.resolve(__dirname, "./" + strategy)
     fsExtended.copyDir(secondPath, ".", function(err) {
         if (err)
             console.error(err)
@@ -53,6 +53,7 @@ var initialize = () => {
                 name
             }
         });
+        console.log("Ficheros de Heroku desplegados");
         console.log("Aplicación creada: " + name);
         require('simple-git')()
             .init()
