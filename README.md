@@ -40,6 +40,25 @@ gulp deploy-heroku --> Depsliega tu libro en heroku
 }
 ```
 
+* Para el despliegue github debe rellenar el fichero userData.json con los siguientes campos:
+
+1. La organización de acceso.
+2. El token de github con los permisos necesarios.
+3. La url callback de su github app.
+4. El Client id de su github app.
+5. El Client secret de su github app.
+
+```json
+{
+    "org": "myOrg",
+    "token": "myToken",
+    "url": "myCallbackUrl",
+    "idClient": "myClientID",
+    "secretClient": "mySecretClient"
+}
+
+```
+
 ```
 linux@user: gitbook-start -d heroku -p [github | local]
 ? Introduce tu token de Heroku: mi-token
