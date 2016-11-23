@@ -13,7 +13,7 @@ var initialize = (strategy) => {
             console.error(err)
     });
 
-    fs.appendFile('gulpfile.js', "var heroku = require('gitbook-start-heroku-ull-es-aitor-joshua-samuel');\ngulp.task('deploy-heroku',function() {\n\theroku.deploy();\n});", function(err) {
+    fs.appendFile('gulpfile.js', "var heroku = require('gitbook-start-heroku-aitor-joshua-samuel');\ngulp.task('deploy-heroku',function() {\n\theroku.deploy();\n});", function(err) {
         if (err)
             console.error(err);
     });
