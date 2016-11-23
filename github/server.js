@@ -9,9 +9,9 @@ var pertenece;
 rename.renameIndex();
 
 passport.use(new Strategy({
-        clientID: "91d8ed8041800a52daeb",
-        clientSecret: "4faed6ee3b9d88a0a34903290d78cc72b12cad76",
-        callbackURL: 'http://localhost:3000/login/github/return'
+        clientID: data.idClient,
+        clientSecret: data.secretClient,
+        callbackURL: data.url
     },
     (accessToken, refreshToken, profile, cb) => {
         pertenece = org.access(profile.username);
@@ -30,6 +30,7 @@ passport.deserializeUser((obj, cb) => {
 
 var app = express();
 
+app.set('port', (process.env.PORT || 5000));
 app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 
@@ -88,5 +89,6 @@ app.get('/profile', require('connect-ensure-login').ensureLoggedIn(), (req, res)
     });
 });
 
-console.log("App running on localhost:3000");
-app.listen(3000);
+app.listen(app.get('port'), function() {
+  console.log('Node app is running on port', app.get('port'));
+});

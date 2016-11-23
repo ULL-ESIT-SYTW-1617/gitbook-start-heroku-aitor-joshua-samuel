@@ -1,4 +1,7 @@
 {
     "org": "myOrg",
-    "token": "myToken"
+    "token": "myToken",
+    "url": "myCallbackUrl",
+    "idClient": "myClientID",
+    "secretClient": "mySecretClient"
 }
