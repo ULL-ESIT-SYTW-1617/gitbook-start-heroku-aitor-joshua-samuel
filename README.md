@@ -26,7 +26,7 @@ gitbook-start -d heroku -p local --> Añades el plugin en gitbook-start para el 
 gulp deploy-heroku --> Depsliega tu libro en heroku
 ```
 
-* Ejemplo de uso:
+###### Local
 
 * Para el caso del depsliegue local, deberá añadir su token de dropbox y el link del archivo a descargar.
 * Suba previamente el archivo ```users.json``` a [Dropbox](https://dropbox.com)
@@ -39,6 +39,9 @@ gulp deploy-heroku --> Depsliega tu libro en heroku
     "token": "myToken"
 }
 ```
+* Para Añadir un nuevo usuario puede hacer uso de la tarea de ```gulp```: ```gulp new-user```
+
+###### Github
 
 * Para el despliegue github debe rellenar el fichero userData.json con los siguientes campos:
 
@@ -58,6 +61,7 @@ gulp deploy-heroku --> Depsliega tu libro en heroku
 }
 
 ```
+###### Ejemplo
 
 ```
 linux@user: gitbook-start -d heroku -p [github | local]
