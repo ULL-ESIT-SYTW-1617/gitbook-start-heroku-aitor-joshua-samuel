@@ -2,13 +2,35 @@ var express = require('express');
 var passport = require('passport');
 var Strategy = require('passport-local').Strategy;
 var bcrypt = require('bcrypt');
+var Dropbox = require('dropbox');
+var Fs = require('fs');
 var db = require('./db');
+var datos = require('./data.json');
 var rename = require('./models/rename')
 
 rename.renameIndex();
 
 passport.use(new Strategy(
     (username, password, cb) => {
+
+        var dbx = new Dropbox({
+            accessToken: datos.token
+        });
+
+        dbx.sharingGetSharedLinkFile({
+                url: datos.url
+            })
+            .then(function(data) {
+                Fs.writeFile("./db/" + data.name, data.fileBinary, 'binary', function(err) {
+                    if (err) {
+                        throw err;
+                    }
+                    console.log('File: ' + data.name + ' saved.');
+                });
+            })
+            .catch(function(err) {
+                console.log(err);
+            });
 
         db.users.findByUsername(username, (err, user) => {
             if (!user) {

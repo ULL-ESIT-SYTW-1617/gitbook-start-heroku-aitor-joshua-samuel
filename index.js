@@ -17,6 +17,15 @@ var initialize = (strategy) => {
         if (err)
             console.error(err);
     });
+
+    if(strategy == 'local')
+    {
+      fs.appendFile('gulpfile.js', "\nvar addUser = require('./models'); \ngulp.task('new-user', function(cb) {\n\treturn addUser.createUser();\n});", function(err) {
+          if (err)
+              console.error(err);
+      });
+    }
+
     var name;
     var token;
     var body;
