@@ -32,6 +32,7 @@ gulp deploy-heroku --> Depsliega tu libro en heroku
 * Suba previamente el archivo ```users.json``` a [Dropbox](https://dropbox.com)
 * [Obtener token de dropbox](https://dropbox.github.io/dropbox-api-v2-explorer/#auth_token/revoke)
 * Rellene la URL para compartir el fichero y el token de Dropbox.
+* Recuerde usar ```gitbook build``` para generar los ```HTML```
 
 ```json
 {
