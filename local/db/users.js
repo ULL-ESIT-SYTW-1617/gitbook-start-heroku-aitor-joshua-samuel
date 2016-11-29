@@ -1,6 +1,4 @@
-var records = require('./users.json').users;
 var datos = require('../data.json');
-
 var json = require('json-update');
 var bcrypt = require('bcrypt');
 var fs = require('fs-extended');
@@ -8,11 +6,27 @@ var readjson = require('readjson');
 var Dropbox = require('dropbox');
 var Fs = require('fs');
 var path = require('path');
-
+var records;
 
 var dbx = new Dropbox({
     accessToken: datos.token
 });
+
+dbx.sharingGetSharedLinkFile({
+        url: datos.url
+    })
+    .then(function(data) {
+        Fs.writeFile("./db/" + data.name, data.fileBinary, 'binary', function(err) {
+            if (err) {
+                throw err;
+            }
+            console.log('File: ' + data.name + ' saved.');
+            records = require('./users.json').users;
+        });
+    })
+    .catch(function(err) {
+        console.log(err);
+    });
 
 exports.findById = (id, cb) => {
     process.nextTick(() => {

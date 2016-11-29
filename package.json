@@ -1,6 +1,6 @@
 {
   "name": "gitbook-start-heroku-aitor-joshua-samuel",
-  "version": "1.1.5",
+  "version": "1.1.6",
   "description": "A plugin for heroku deploys",
   "main": "index.js",
   "scripts": {
