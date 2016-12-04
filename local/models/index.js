@@ -74,6 +74,6 @@ var createUser = () => {
 
     });
 
-}
+};
 
 module.exports.createUser = createUser;

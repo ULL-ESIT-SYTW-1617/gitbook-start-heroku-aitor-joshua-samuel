@@ -1,84 +1,17 @@
-var fs = require('fs');
-var fsExtended = require('fs-extended');
-var path = require('path');
-var inquirer = require('inquirer');
-var Heroku = require('heroku-client');
-
+var cli = require('./src');
 
 var initialize = (strategy) => {
 
-    var secondPath = path.resolve(__dirname, "./" + strategy)
-    fsExtended.copyDir(secondPath, ".", function(err) {
-        if (err)
-            console.error(err)
-    });
+    cli.deploy.createDir(strategy);
+    cli.dependencias.addDeps();
 
-    fs.appendFile('gulpfile.js', "var heroku = require('gitbook-start-heroku-aitor-joshua-samuel');\ngulp.task('deploy-heroku',function() {\n\theroku.deploy();\n});", function(err) {
-        if (err)
-            console.error(err);
-    });
-
-    if(strategy == 'local')
-    {
-      fs.appendFile('gulpfile.js', "\nvar addUser = require('./models'); \ngulp.task('new-user', function(cb) {\n\treturn addUser.createUser();\n});", function(err) {
-          if (err)
-              console.error(err);
-      });
-    }
-
-    var name;
-    var token;
-    var body;
-    var promise = new Promise(function(resolve, reject) {
-
-        var questions = [{
-            type: 'input',
-            message: 'Introduce tu token de Heroku: ',
-            name: 'herokuToken'
-        }, {
-            type: 'input',
-            name: 'herokuName',
-            message: 'Introduzca el nombre de su app en Heroku: ',
-        }];
-
-        inquirer.prompt(questions).then(function(answers) {
-            if (answers) {
-                resolve(answers);
-            } else {
-                reject("No answers")
-            }
-        });
-
-    });
-    promise.then(function(data) {
-
-        token = data.herokuToken;
-        name = data.herokuName
-        var h = new Heroku({
-            token
-        });
-        body = h.post('/apps', {
-            body: {
-                name
-            }
-        });
-        console.log("Ficheros de Heroku desplegados");
-        console.log("Aplicación creada: " + name);
-        require('simple-git')()
-            .init()
-            .addRemote('heroku', 'https://git.heroku.com/' + name + '.git')
-
-    }, function(err) {
-        console.log("Fallo");
-    });
-
-}
+};
 
 var deploy = () => {
     require('simple-git')()
         .add('.')
         .commit("commit")
-        .push(['heroku', 'master'], function() {});
+        .push(['heroku', 'master'], () => {});
 };
 
 module.exports.initialize = initialize;

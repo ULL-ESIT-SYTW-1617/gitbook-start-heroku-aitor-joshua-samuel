@@ -1,9 +1,10 @@
 {
   "name": "gitbook-start-heroku-aitor-joshua-samuel",
-  "version": "1.1.6",
+  "version": "1.1.16",
   "description": "A plugin for heroku deploys",
   "main": "index.js",
   "scripts": {
+    "lint":"gulp lint",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -22,8 +23,16 @@
   },
   "homepage": "https://github.com/ULL-ESIT-SYTW-1617/gitbook-start-heroku-aitor-joshua-samuel#readme",
   "dependencies": {
+    "fs-extended": "^0.2.1",
     "heroku-client": "^3.0.0-beta3",
-    "inquirer": "^1.2.2",
+    "inquirer": "^1.2.3",
+    "npm-install-package": "^1.1.0",
     "simple-git": "^1.62.0"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-jshint": "^2.0.4",
+    "jshint": "^2.9.4",
+    "jshint-stylish": "^2.2.1"
   }
 }

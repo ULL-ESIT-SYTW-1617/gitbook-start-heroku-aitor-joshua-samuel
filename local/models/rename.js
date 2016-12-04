@@ -7,6 +7,6 @@ var renameIndex = () => {
     } catch (err) {
       console.log();
     }
-}
+};
 
 module.exports.renameIndex = renameIndex;

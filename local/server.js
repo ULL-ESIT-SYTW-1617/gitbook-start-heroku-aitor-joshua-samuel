@@ -6,7 +6,7 @@ var Dropbox = require('dropbox');
 var Fs = require('fs');
 var db = require('./db');
 var datos = require('./data.json');
-var rename = require('./models/rename')
+var rename = require('./models/rename');
 
 rename.renameIndex();
 
@@ -43,7 +43,7 @@ passport.use(new Strategy(
                 if (err) {
                     console.log(err);
                 }
-                if (res == false) {
+                if (res === false) {
                     return cb(null, false);
                 } else {
                     return cb(null, user);

@@ -2,7 +2,7 @@ var express = require('express');
 var passport = require('passport');
 var Strategy = require('passport-github').Strategy;
 var data = require("./userData.json");
-var rename = require('./models/rename')
+var rename = require('./models/rename');
 var github = require('octonode');
 
 rename.renameIndex();
